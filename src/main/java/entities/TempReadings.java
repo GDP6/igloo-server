@@ -17,15 +17,16 @@ public class TempReadings {
 	
 	public TempReadings() {}
 
-	public TempReadings(Key<WaterTank> tankKey, int sensor1, int sensor2, int sensor3, Long timeTaken) {
+	public TempReadings(long tankID, int sensor1, int sensor2, int sensor3, Long timeTaken) {
 		super();
-		this.tankKey = tankKey;
+		this.tankKey = Key.create(WaterTank.class, tankID);
 		this.sensor1 = sensor1;
 		this.sensor2 = sensor2;
 		this.sensor3 = sensor3;
 		this.timeTaken = timeTaken;
-		ObjectifyService.ofy().save().entity(this).now();
 	}
+	
+	
 	
 	
 

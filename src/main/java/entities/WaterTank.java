@@ -9,7 +9,6 @@ public class WaterTank {
 	
 	public @Id Long id;
 	public WaterTank() {
-		ObjectifyService.ofy().save().entity(this).now();
 	}
 
 
